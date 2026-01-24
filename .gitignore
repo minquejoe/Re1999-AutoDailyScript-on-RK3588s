@@ -19,4 +19,5 @@ screenShot/*
 # But do not ignore the directory itself and .gitkeep file
 !screenShot/
 !screenShot/.gitkeep
-screenshot.jpg
+
+*.jpg
