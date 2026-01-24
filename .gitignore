@@ -20,4 +20,4 @@ screenShot/*
 !screenShot/
 !screenShot/.gitkeep
 
-*.jpg
+screenshot.jpg
