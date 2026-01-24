@@ -8,12 +8,14 @@ waiting = {'x':1200, 'y':700}
 menu = {
         'to_menu.py':{'x':1000, 'y':700},       # 菜单处与角色互动
         'to_harvest.py':{'x':1500, 'y':600},
-        'to_mind.py':{'x':1600, 'y':440}, 
-        'to_gold.py':{'x':1600, 'y':440}, 
-        'to_dust.py':{'x':1600, 'y':440}, 
+        'to_mind.py':{'x':1600, 'y':450}, 
+        'to_gold.py':{'x':1600, 'y':450}, 
+        'to_dust.py':{'x':1600, 'y':450}, 
         'to_mailbox.py':{'x':115, 'y':280},
         'to_daily_weekly.py':{'x':120, 'y':400},
-        'to_juke.py':{'x':325, 'y':110},        # icon第一位置，无装饰
+        # 'to_juke.py':{'x':325, 'y':110},        # icon第一位置，无装饰
+        'to_juke.py':{'x':500, 'y':110},        # icon第一位置，有装饰
+        # 'to_juke.py':{'x':440, 'y':100},        # icon第一位置，周年装饰
         }
 menu_quit = menu
 

@@ -56,11 +56,11 @@ def game_daily_weekly_tap(x1, y1, x2, y2):
     game_go_back()
     game_go_back()
 
-    
 def game_juke_tap(x1, y1, x2, y2, x3, y3):
     game_tap_sleep_X2_ShortInv(x1, y1, x2, y2)
     game_tap_sleep_X2_ShortInv(x3, y3, x1, y1)
-    
+
+
 # ==========================
 #       游戏启动、关闭
 # ==========================
