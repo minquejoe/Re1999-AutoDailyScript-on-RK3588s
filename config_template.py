@@ -1,18 +1,18 @@
 # ==========================
-#     adb服务器和设备位置
+#     ADB server and device
 # ==========================
 adb_host = "127.0.0.1"
-adb_port = 5037
+adb_port = 5038
 device_serial = "localhost:6602"
 
 # ==========================
-#         游戏名称
+#         Game info
 # ==========================
 package_name = 'com.shenlan.m.reverse1999'
 start_activity_name = 'com.ssgame.mobile.gamesdk.frame.AppStartUpActivity'
 
 # ==========================
-#     游戏交互时间间隔
+#     Interaction timing
 # ==========================
 double_tap_interval = 0.25
 sleep_tap_long_interval = 10
@@ -23,48 +23,52 @@ next_file_interval = 5
 long_sleep = 90
 
 # ==========================
-#        任务链设置
+#        Task chain
 # ==========================
-ERR_COUNT = 3   # 最大任务链失败次数
-seq_retry_wait = 30 # seconds，每次任务链失败重试前等待时间
+ERR_COUNT = 3          # Max task chain retry count
+seq_retry_wait = 30    # Seconds to wait before each retry
+task_timeout = 300     # Seconds, per-task timeout
+task_timeout_threshold = 5  # Max allowed task failures before chain retry
 
-task_timeout = 300 # seconds，每个任务的最长时长
-task_timeout_threshold = 5  # 允许的最大任务失败个数，任务链失败判定根据
+# Task names must match keys in task_configs.TASK_CONFIGS
 task_seq = [
-    "python3 to_menu.py",
-    "python3 to_harvest.py",
-    "python3 to_menu.py",
-    "python3 to_mind.py",
-    "python3 to_menu.py",
-    "python3 to_gold.py",
-    "python3 to_menu.py",
-    "python3 to_dust.py",
-    "python3 to_mailbox.py",
-    "python3 to_menu.py",
-    "python3 to_harvest.py",
-    "python3 to_menu.py",
-    "python3 to_daily_weekly.py",
-    "python3 to_menu.py",
-    "python3 to_juke.py",
+    "menu",
+    "harvest",
+    "menu",
+    "mind",
+    "menu",
+    "gold",
+    "menu",
+    "dust",
+    "mailbox",
+    "menu",
+    "harvest",
+    "menu",
+    "daily_weekly",
+    "menu",
+    "juke",
 ]
 
 # ==========================
-#      Alert发送邮箱设置
+#      Email alert (SMTP)
 # ==========================
+SMTP_HOST = "smtp.qq.com"
+SMTP_PORT = 465
 SOURCE_MAIL_ADDR = "xxx"
 SOURCE_MAIL_PASS = "xxx"
-TARGET_MAIL_ADDR = "xxx"
+TARGET_MAIL_ADDR = SOURCE_MAIL_ADDR
 
 # ==========================
-#       mobileNet相关
+#       MobileNet / RKNN
 # ==========================
 RKNN_MODEL = 'model/mobilenetv2_re1999.rknn'
 IMG_PATH = './screenshot.jpg'
 CLASS_LABEL_PATH = 'model/mobilenetv2_re1999_class_labels.txt'
+MODEL_INPUT_SIZE = 224
 
 # ==========================
-#    训练用的图片保存设置
+#    Training data capture
 # ==========================
-PIC_SAVE_FLAG = False    # Decide whether to save the picture
+PIC_SAVE_FLAG = False
 PIC_SAVE_PATH = "screenShot"
-PIC_SAVE_MAX = 100  # Maximum number of pictures to save
+PIC_SAVE_MAX = 100

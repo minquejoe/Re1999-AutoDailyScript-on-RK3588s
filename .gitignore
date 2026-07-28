@@ -1,17 +1,16 @@
 # Ignore all .log files
 *.log
 
-# Ignore node_modules directory
-node_modules/
-
 # Ignore compiled files
 *.class
+*.pyc
 
 # sensitive info, see `config_template.py` to create
 config.py
 
 __pycache__
 .vscode
+.idea
 
 # Ignore all files in the screenShot directory
 screenShot/*
