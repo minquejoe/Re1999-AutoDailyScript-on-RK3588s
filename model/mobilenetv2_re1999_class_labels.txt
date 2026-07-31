@@ -2,7 +2,7 @@
 1	battle_confirm
 2	battle_dream
 3	battle_entry
-4	battle_for_upgrage
+4	battle_for_upgrade
 5	battle_ongoing
 6	battle_quit
 7	battle_resource_01
@@ -18,8 +18,8 @@
 17	bulletin_select
 18	item_explanation
 19	item_get
-20	juke_box_calim
-21	juke_box_calim_finish
+20	juke_box_claim
+21	juke_box_claim_finish
 22	juke_box_point
 23	levelup
 24	login_error

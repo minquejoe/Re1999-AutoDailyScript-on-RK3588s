@@ -3,7 +3,7 @@ import importlib
 import logging
 import sys
 
-from task_configs import TASK_CONFIGS
+from config_tasks import CONFIG_TASKS
 from to_task import to_task
 
 logger = logging.getLogger(__name__)
@@ -20,11 +20,11 @@ def _resolve_function(func_name: str):
 
 
 def run_task(task_name: str) -> None:
-    if task_name not in TASK_CONFIGS:
-        logger.error("Unknown task: %s. Available: %s", task_name, list(TASK_CONFIGS.keys()))
+    if task_name not in CONFIG_TASKS:
+        logger.error("Unknown task: %s. Available: %s", task_name, list(CONFIG_TASKS.keys()))
         sys.exit(1)
 
-    task_cfg = TASK_CONFIGS[task_name]
+    task_cfg = CONFIG_TASKS[task_name]
     class_to_adb = {}
 
     for class_name, entry in task_cfg["class_to_adb"].items():
@@ -46,7 +46,7 @@ if __name__ == '__main__':
     )
 
     parser = argparse.ArgumentParser(description="Run a Re1999 automation task")
-    parser.add_argument("task", choices=list(TASK_CONFIGS.keys()), help="Task name to run")
+    parser.add_argument("task", choices=list(CONFIG_TASKS.keys()), help="Task name to run")
     args = parser.parse_args()
 
     run_task(args.task)

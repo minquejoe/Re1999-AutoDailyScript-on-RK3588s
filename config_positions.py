@@ -1,5 +1,5 @@
 # Position mappings: recognized scene -> tap coordinates
-# Keys are task names matching task_configs.TASK_CONFIGS
+# Keys are task names matching config_tasks.CONFIG_TASKS
 
 login_update = {'x': 1165, 'y': 655}
 login_error = {'x': 1200, 'y': 700}

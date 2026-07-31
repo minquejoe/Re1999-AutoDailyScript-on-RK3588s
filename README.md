@@ -16,8 +16,6 @@ W Query dynamic range failed. Ret code: RKNN_ERR_MODEL_INVALID. (If it is a stat
 运行`run.py`进行每日活动
 
 
-保存图片需要手动创建文件夹：`screenShot`
-
 # RKNN:
 
 https://github.com/airockchip/rknn_model_zoo

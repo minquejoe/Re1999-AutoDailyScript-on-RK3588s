@@ -1,7 +1,5 @@
 import logging
-import os
 import signal
-import sys
 import time
 
 import config
@@ -16,13 +14,12 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
+class TaskTimeout(Exception):
+    """Raised by signal handler when a task exceeds its time limit."""
+
+
 def _timeout_handler(signum: int, frame) -> None:
-    logger.error("Task timed out, force-closing game")
-    try:
-        game_close()
-    except Exception:
-        pass
-    sys.exit(1)
+    raise TaskTimeout()
 
 
 def main() -> None:
@@ -38,10 +35,11 @@ def main() -> None:
 
             try:
                 run_task(task_name)
-            except SystemExit as e:
-                if e.code == 1:
-                    timed_out_tasks.append(task_name)
-                    logger.error("Task '%s' failed or timed out", task_name)
+            except TaskTimeout:
+                timed_out_tasks.append(task_name)
+                logger.error("Task '%s' timed out after %ds", task_name, config.task_timeout)
+                game_close()
+                game_start()
             except Exception as e:
                 timed_out_tasks.append(task_name)
                 logger.error("Task '%s' raised exception: %s", task_name, e)

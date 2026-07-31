@@ -30,7 +30,7 @@ seq_retry_wait = 30    # Seconds to wait before each retry
 task_timeout = 300     # Seconds, per-task timeout
 task_timeout_threshold = 5  # Max allowed task failures before chain retry
 
-# Task names must match keys in task_configs.TASK_CONFIGS
+# Task names must match keys in config_tasks.CONFIG_TASKS
 task_seq = [
     "menu",
     "harvest",

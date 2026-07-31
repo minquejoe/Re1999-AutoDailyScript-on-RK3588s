@@ -1,7 +1,6 @@
-adbutils>=0.11.0
-opencv-python-headless>=4.5.0
-numpy>=1.21.0
-scipy>=1.7.0
-# rknnlite must be installed from the RKNN Toolkit2 package
-# See: https://github.com/airockchip/rknn-toolkit2
-# pip install rknn-toolkit-lite2
+adbutils>=2.0
+numpy>=1.21
+opencv-python-headless>=4.5
+scipy>=1.7
+# Install rknn-toolkit-lite2 from local wheel:
+# pip install rknn_toolkit_lite2-2.3.2-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
